@@ -1,0 +1,29 @@
+.tabla_pagos {
+    width: 100%;
+}
+
+.tabla_pagos thead tr th,
+.tabla_pagos tfoot tr th {
+    border-color: black;
+}
+
+.tabla_pagos tbody tr th,
+.tabla_pagos tbody tr td {
+    border-color: black;
+    border-width: 1px;
+    text-align: center;
+}
+
+.tabla_pagos tbody tr td {
+    border-width: 1px;
+    border-color: black;
+}
+
+.tabla_pagos tbody tr td.btn-opciones span {
+    cursor: pointer;
+}
+
+.tabla_pagos tbody tr td.btn-opciones span {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,54 @@
+#contenedorRegistros {
+    overflow: auto;
+}
+
+.tabla_registros {
+    width: 100%;
+}
+
+.tabla_registros thead tr th,
+.tabla_registros tfoot tr th {
+    border-color: black;
+    border-width: 1px;
+}
+
+.tabla_registros tbody tr td {
+    border: solid 1px black;
+    text-align: center;
+}
+
+.tabla_registros tbody tr:hover {
+    background-color: rgb(247, 247, 171);
+    cursor: pointer;
+}
+
+.tabla_registros tbody tr:hover td {
+    color: black;
+}
+
+
+/* TABLA FORMULARIO */
+
+.tabla_formulario {
+    width: 100%;
+}
+
+.tabla_formulario tbody tr td {
+    border-color: white;
+}
+
+.tabla_formulario tbody tr td:nth-child(1) {
+    padding-left: 5px;
+}
+
+
+/* FORMULARIO */
+
+.titulo_formulario {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.cierra_formulario {
+    font-size: 1.2em;
+}

@@ -1,5 +1,9 @@
 @if (isset($hora_alquilado))
-    {!! Form::model($hora_alquilado, ['route' => ['hora_alquilados.update', $hora_alquilado->id], 'method' => 'post', 'id' => 'formularioRegistroHora']) !!}
+    {!! Form::model($hora_alquilado, [
+        'route' => ['hora_alquilados.update', $hora_alquilado->id],
+        'method' => 'post',
+        'id' => 'formularioRegistroHora',
+    ]) !!}
     <input type="hidden" id="urlEliminarFormulario" value={{ route('hora_alquilados.destroy', $hora_alquilado->id) }}>
     <div class="row">
         <div class="col-md-12">
@@ -139,11 +143,12 @@
             @if (!$sw_entrega)
                 <button type="button" class="btn bg-yellow float-right ml-1"
                     id="btnActualizaFormulario">Actualizar</button>
-                <button type="button" class="btn btn-success float-right ml-1" id="btnEntregaRegistro">Entregar</button>
+                <button type="button" class="btn btn-success float-right ml-1"
+                    id="btnEntregaRegistro">Entregar</button>
                 <button type="button" class="btn btn-danger float-right ml-1"
                     id="btnEliminaFormulario">Eliminar</button>
             @endif
-            <a href="https://www.google.com" class="btn bg-black float-right">Trayecto GPS<a>
+            <a href="{{ route('hora_alquilados.trayecto_gps') }}" class="btn bg-black float-right">Trayecto GPS<a>
                 @else
                     <button type="button" class="btn bg-yellow float-right"
                         id="btnRegistraFormulario">Registrar</button>

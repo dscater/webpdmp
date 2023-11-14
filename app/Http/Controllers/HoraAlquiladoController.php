@@ -23,9 +23,13 @@ class HoraAlquiladoController extends Controller
         $array_meses = ['01' => 'ENERO', '02' => 'FEBRERO', '03' => 'MARZO', '04' => 'ABRIL', '05' => 'MAYO', '06' => 'JUNIO', '07' => 'JULIO', '08' => 'AGOSTO', '09' => 'SEPTIEMBRE', '10' => 'OCTUBRE', '11' => 'NOVIEMBRE', '12' => 'DICIEMBRE'];
 
         $min_anio = HoraAlquilado::min('anio');
+        $gestion_actual = (int)date("Y");
         $array_anios = [];
         if ($min_anio) {
             $max_anio = HoraAlquilado::max('anio');
+            if ($max_anio < $gestion_actual) {
+                $max_anio = $gestion_actual;
+            }
             for ($i = $min_anio; $i <= $max_anio; $i++) {
                 $array_anios[$i] = $i;
             }
@@ -33,6 +37,12 @@ class HoraAlquiladoController extends Controller
             $array_anios[date('Y')] = date('Y');
         }
         return view('hora_alquilados.index', compact('array_maquinarias', 'array_meses', 'array_anios'));
+    }
+
+
+    public function trayecto_gps(Request $request)
+    {
+        return view("hora_alquilados.trayecto_gps");
     }
 
     public function getRegistros(Request $request)

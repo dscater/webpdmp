@@ -63,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('proyecto_usuarios', 'ProyectoUsuarioController');
 
     // CONTROL HORAS PROPIOS
+    Route::get('hora_propios/get/trayecto_gps', 'HoraPropioController@trayecto_gps')->name('hora_propios.trayecto_gps');
     Route::resource('hora_propios', 'HoraPropioController', [
         'except' => ['create', 'show']
     ]);
@@ -71,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('hora_propios/get/pdf', 'HoraPropioController@pdf')->name('hora_propios.pdf');
 
     // CONTROL HORAS ALQUILADOS
+    Route::get('hora_alquilados/get/trayecto_gps', 'HoraAlquiladoController@trayecto_gps')->name('hora_alquilados.trayecto_gps');
     Route::resource('hora_alquilados', 'HoraAlquiladoController', [
         'except' => ['create', 'show']
     ]);

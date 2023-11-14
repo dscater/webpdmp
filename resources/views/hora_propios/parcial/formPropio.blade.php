@@ -1,5 +1,9 @@
 @if (isset($hora_propio))
-    {!! Form::model($hora_propio, ['route' => ['hora_propios.update', $hora_propio->id], 'method' => 'post', 'id' => 'formularioRegistroHora']) !!}
+    {!! Form::model($hora_propio, [
+        'route' => ['hora_propios.update', $hora_propio->id],
+        'method' => 'post',
+        'id' => 'formularioRegistroHora',
+    ]) !!}
     <input type="hidden" id="urlEliminarFormulario" value={{ route('hora_propios.destroy', $hora_propio->id) }}>
     <div class="row">
         <div class="col-md-12">
@@ -18,7 +22,7 @@
         </div>
     </div>
 @endif
-<input type="hidden" name="maquinaria_id" value={{$maquinaria_id}}>
+<input type="hidden" name="maquinaria_id" value={{ $maquinaria_id }}>
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
@@ -152,14 +156,18 @@
     <div class="col-md-12">
         <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
         @if (isset($hora_propio))
-            @if(!$sw_entrega)
-                <button type="button" class="btn bg-yellow float-right ml-1" id="btnActualizaFormulario">Actualizar</button>
-                <button type="button" class="btn btn-success float-right ml-1" id="btnEntregaRegistro">Entregar</button>
-                <button type="button" class="btn btn-danger float-right ml-1" id="btnEliminaFormulario">Eliminar</button>
+            @if (!$sw_entrega)
+                <button type="button" class="btn bg-yellow float-right ml-1"
+                    id="btnActualizaFormulario">Actualizar</button>
+                <button type="button" class="btn btn-success float-right ml-1"
+                    id="btnEntregaRegistro">Entregar</button>
+                <button type="button" class="btn btn-danger float-right ml-1"
+                    id="btnEliminaFormulario">Eliminar</button>
             @endif
-            <a href="https://www.google.com" class="btn bg-black float-right">Trayecto GPS<a>
-        @else
-            <button type="button" class="btn bg-yellow float-right" id="btnRegistraFormulario">Registrar</button>
+            <a href="{{ route('hora_propios.trayecto_gps') }}" class="btn bg-black float-right">Trayecto GPS<a>
+                @else
+                    <button type="button" class="btn bg-yellow float-right"
+                        id="btnRegistraFormulario">Registrar</button>
         @endif
     </div>
 </div>

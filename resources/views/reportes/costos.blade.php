@@ -11,10 +11,9 @@
 
         @page {
             margin-top: 1.5cm;
-            margin-bottom: 1cm;
-            margin-left: 0.5cm;
-            margin-right: 0.5cm;
-            border: 5px solid blue;
+            margin-bottom: 0.3cm;
+            margin-left: 0.15cm;
+            margin-right: 0.15cm;
         }
 
         table {
@@ -41,7 +40,6 @@
 
         .logo img {
             position: absolute;
-            width: 200px;
             height: 90px;
             top: -20px;
             left: 30px;
@@ -51,7 +49,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 18pt;
-            color: #007bff;
+            color: #001870;
             width: 450px;
             margin: auto;
             margin-top: 15px;
@@ -63,7 +61,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 13pt;
-            color: #007bff;
+            color: #001870;
             width: 450px;
             text-align: center;
             margin: auto;
@@ -72,7 +70,7 @@
         }
 
         .fecha {
-            color: #006adb;
+            color: #001870;
             width: 250px;
             text-align: center;
             margin: auto;
@@ -93,7 +91,7 @@
 
         table tfoot,
         table thead {
-            background: #007bff;
+            background: #001870;
             color: white;
         }
 
@@ -106,7 +104,7 @@
         table tbody tr td {
             padding: 0px;
             font-size: 0.45em;
-            border-bottom: solid 1px #007bff;
+            border-bottom: solid 1px #001870;
             text-align: center;
         }
 
@@ -168,7 +166,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 9pt;
-            color: #007bff;
+            color: #001870;
             width: 450px;
             font-weight: bold;
             text-decoration: underline;
@@ -510,7 +508,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td style="border-top: solid 1px #007bff;">NO SE ENCONTRARÓN REGISTROS DE ESTE TIPO</td>
+                        <td style="border-top: solid 1px #001870;">NO SE ENCONTRARÓN REGISTROS DE ESTE TIPO</td>
                     </tr>
                 </tbody>
             </table>

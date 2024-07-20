@@ -54,6 +54,7 @@
     @include('reportes.modal.m_usuarios')
     @include('reportes.modal.m_maquinarias')
     @include('reportes.modal.m_costos')
+    @include('reportes.modal.m_proyectos')
 @endsection
 
 @section('scripts')

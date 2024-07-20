@@ -42,8 +42,8 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <h2 style="font-weight:bold;text-align:center;" class="text-blue"> "{{app\Configuracion::first()->nombre_sistema}}"</h2>
-                            <h3 style="text-align:center;" class="text-blue font-weight-bold">¡BIENVENIDO
+                            <h2 style="font-weight:bold;text-align:center;" class="text-principal"> "{{app\Configuracion::first()->nombre_sistema}}"</h2>
+                            <h3 style="text-align:center;" class="text-principal font-weight-bold">¡BIENVENIDO
                                 {{ Auth::user()->datosUsuario ? Auth::user()->datosUsuario->nombre . ' ' . Auth::user()->datosUsuario->paterno . ' ' . Auth::user()->datosUsuario->materno : Auth::user()->name }}!
                             </h3>
                         </div>

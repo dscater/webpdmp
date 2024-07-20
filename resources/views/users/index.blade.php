@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="card bg-blue">
+                <div class="card bg-principal">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-1 col-xs-12 float-left">

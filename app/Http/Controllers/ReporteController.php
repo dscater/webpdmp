@@ -37,7 +37,9 @@ class ReporteController extends Controller
         } else {
             $array_anios[date('Y')] = date('Y');
         }
-        return view('reportes.index', compact('array_meses', 'array_anios'));
+
+        $proyectos = Proyecto::orderBy("created_at", "desc")->get();
+        return view('reportes.index', compact('array_meses', 'array_anios', 'proyectos'));
     }
 
     public function usuarios(Request $request)
@@ -350,7 +352,7 @@ class ReporteController extends Controller
                         $array_costos[$value->id]['t_horometro_ini'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('horometro_ini', 'asc')->get()->first()->horometro_ini;
                         $array_costos[$value->id]['t_horometro_fin'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('horometro_fin', 'desc')->get()->first()->horometro_fin;
                         $array_costos[$value->id]['t_horas_trabajadas'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('horas_trabajadas');
-                        $array_costos[$value->id]['t_acumuladas'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('dia','asc')->get()->last()->acumuladas;
+                        $array_costos[$value->id]['t_acumuladas'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('dia', 'asc')->get()->last()->acumuladas;
                         if ($value->combustible == 'DIESEL') {
                             $array_costos[$value->id]['t_diesel'] = HoraPropio::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('combustible_cantidad');
                         } else {
@@ -400,12 +402,12 @@ class ReporteController extends Controller
                         't_num_viajes' => 0,
                     ];
                     $existe = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->get()->first();
-                    if($existe){
+                    if ($existe) {
                         $array_costos[$value->id]['t_horometro_ini'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('horometro_ini', 'asc')->get()->first()->horometro_ini;
                         $array_costos[$value->id]['t_horometro_fin'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('horometro_fin', 'desc')->get()->first()->horometro_fin;
                         $array_costos[$value->id]['t_horas_trabajadas'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('horas_trabajadas');
                         $array_costos[$value->id]['t_calentamiento'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('calentamiento');
-                        $array_costos[$value->id]['t_acumuladas'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('dia','asc')->get()->last()->acumuladas;
+                        $array_costos[$value->id]['t_acumuladas'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->orderBy('dia', 'asc')->get()->last()->acumuladas;
                         $array_costos[$value->id]['t_total_horas'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('total_horas');
                         if ($value->combustible == 'DIESEL') {
                             $array_costos[$value->id]['t_diesel'] = HoraAlquilado::where('mes', $mes)->where('anio', $anio)->where('maquinaria_id', $value->id)->sum('combustible_cantidad');
@@ -441,5 +443,34 @@ class ReporteController extends Controller
         $canvas->page_text($ancho - 90, $alto - 25, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
 
         return $pdf->stream('ResumenCostos.pdf');
+    }
+
+    public function proyectos(Request $request)
+    {
+        $proyecto_id = $request->proyecto_id;
+        $fecha_ini = $request->fecha_ini;
+        $fecha_fin = $request->fecha_fin;
+
+        $proyectos = Proyecto::select("proyectos.*");
+        if ($proyecto_id != 'todos') {
+            $proyectos->where("id", $proyecto_id);
+        }
+
+        if ($fecha_ini && $fecha_fin) {
+            $proyectos->whereBetween("fecha_registro", [$fecha_ini, $fecha_fin]);
+        }
+
+        $proyectos = $proyectos->get();
+
+        $pdf = PDF::loadView('reportes.proyectos', compact('proyectos'))->setPaper('letter', 'portrait');
+        // ENUMERAR LAS PÁGINAS USANDO CANVAS
+        $pdf->output();
+        $dom_pdf = $pdf->getDomPDF();
+        $canvas = $dom_pdf->get_canvas();
+        $alto = $canvas->get_height();
+        $ancho = $canvas->get_width();
+        $canvas->page_text($ancho - 90, $alto - 25, "Página {PAGE_NUM} de {PAGE_COUNT}", null, 10, array(0, 0, 0));
+
+        return $pdf->stream('proyectos.pdf');
     }
 }

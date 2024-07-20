@@ -1,6 +1,6 @@
 <div class="modal fade" id="modal_control">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content bg-blue">
+      <div class="modal-content bg-principal">
         {{-- <div class="modal-header">
 
             <h4 class="modal-title" id="txtTituloEliminar">Eliminar registro</h4>

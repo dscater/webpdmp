@@ -26,7 +26,7 @@
             <div class="col-12">
                 <div class="card">
                     <!-- /.card-header -->
-                    <div class="card-body bg-blue">
+                    <div class="card-body bg-principal">
                         <table id="example2" class="table table-bordered table-hover bg-white">
                             <thead class="bg-yellow">
                                 <tr>

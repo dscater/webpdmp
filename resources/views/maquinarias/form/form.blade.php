@@ -5,7 +5,7 @@
         <legend><i class="fa fa-save"></i> NUEVO EQUIPO/MAQUINARIA</legend>
     @endif
     <div class="row">
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <div class="form-group">
                 <label>Código*</label>
                 {{ Form::text('codigo', null, ['class' => 'form-control', 'required']) }}
@@ -14,6 +14,12 @@
                         <strong>{{ $errors->first('codigo') }}</strong>
                     </span>
                 @endif
+            </div>
+        </div> --}}
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Tipo de Máquina/Equipo*</label>
+                {{ Form::select('tipo_maquina', ['' => 'Seleccione...', 'RETROEXCAVADORA' => 'RETROEXCAVADORA', 'EXCAVADORA' => 'EXCAVADORA', 'PALA' => 'PALA', 'TOPADORA DE ORUGA' => 'TOPADORA DE ORUGA', 'VIBRO COMPACTADORA' => 'VIBRO COMPACTADORA', 'COMPACTADORA' => 'COMPACTADORA', 'MOTONIVELADORA' => 'MOTONIVELADORA', 'CAMION' => 'CAMION', 'CAMIONETA' => 'CAMIONETA', 'MINIBUS' => 'MINIBUS', 'VOLQUETA' => 'VOLQUETA', 'VEHICULOS SIN DOCUMENTOS' => 'VEHICULOS SIN DOCUMENTOS'], null, ['class' => 'form-control', 'required']) }}
             </div>
         </div>
         <div class="col-md-4">

@@ -1,7 +1,7 @@
 @if (count($maquinarias) > 0)
     @foreach ($maquinarias as $value)
         <div class="col-md-2">
-            <div class="card bg-blue text-white">
+            <div class="card bg-principal text-white">
                 <div class="card-body">
                     <div class="contenedor_cliente">
                         <div class="opciones">

@@ -55,6 +55,11 @@ class MaquinariaController extends Controller
     public function store(EquipoMaquinariaRequestStore $request)
     {
         $request['fecha_registro'] = date('Y-m-d');
+
+        $array_codigo = Maquinaria::getCodigo($request->tipo_maquina);
+        $request["codigo"] = $array_codigo[0];
+        $request["nro"] = $array_codigo[1];
+
         $nuevo_equipo = Maquinaria::create(array_map('mb_strtoupper', $request->except('foto')));
         $nuevo_equipo->foto = 'default.png';
         if ($request->hasFile('foto')) {

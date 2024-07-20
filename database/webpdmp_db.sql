@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 14-11-2023 a las 19:42:35
+-- Tiempo de generación: 13-07-2024 a las 16:11:56
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 7.4.19
 
@@ -171,7 +171,9 @@ INSERT INTO `datos_usuarios` (`id`, `nombre`, `paterno`, `materno`, `ci`, `ci_ex
 (7, 'JACINTO', 'ORTIZ', '', '3333', 'CB', 'ZONA LOS OLIVOS CALLE 3 #322', '', '2222222', '7777777', '2022-05-25', 8, '2022-05-25 22:39:05', '2022-05-25 22:39:05'),
 (8, 'EDUARDO', 'CALCINA', '', '44444', 'CB', 'ZONA LOS OLIVOS CALLE 3 #322', '', '2222222', '7777777', '2022-05-25', 9, '2022-05-25 22:39:26', '2022-05-28 20:47:04'),
 (9, 'SAUL', 'SUAREZ', '', '766666', 'LP', 'ZONA LOS OLIVOS CALLE 3 #322', '', '2222222', '7777777', '2022-05-25', 10, '2022-05-25 22:39:53', '2022-05-25 22:39:53'),
-(10, 'JAVIER', 'MARTINEZ', '', '8888', 'CB', 'ZONA LOS OLIVOS CALLE 3 #322', '', '2222222', '7777777', '2022-05-25', 11, '2022-05-25 22:41:26', '2022-05-25 22:41:26');
+(10, 'JAVIER', 'MARTINEZ', '', '8888', 'CB', 'ZONA LOS OLIVOS CALLE 3 #322', '', '2222222', '7777777', '2022-05-25', 11, '2022-05-25 22:41:26', '2022-05-25 22:41:26'),
+(11, 'MARTIN', 'COLQUE', 'PAREDES', '4343', 'CB', 'LOS OLIVOS', '', '222222', '655656565', '2024-07-13', 12, '2024-07-13 15:53:59', '2024-07-13 15:53:59'),
+(12, 'JOSUE', 'MAMANI', '', '5454', 'CB', 'LOS OLIVOS', '', '222222', '7777777', '2024-07-13', 13, '2024-07-13 15:54:45', '2024-07-13 15:54:45');
 
 -- --------------------------------------------------------
 
@@ -245,7 +247,8 @@ INSERT INTO `hora_alquilados` (`id`, `maquinaria_id`, `dia`, `mes`, `anio`, `fec
 (3, 6, 28, '05', 2022, '2022-05-28', '2226', '2227', 2, 1, 8, 0, 3, NULL, 20, 7.00, 5, 40.00, 0, 0.00, 0, 0.00, 0, 0.00, 1, 45.00, 2, '', '2022-05-28', '2022-05-28 14:34:33', '2022-05-28 19:39:15'),
 (4, 6, 27, '05', 2022, '2022-05-27', '2221', '2226', 5, 0, 5, 0, 5, NULL, 2, 9.00, 1, 50.00, 0, 0.00, 0, 0.00, 1, 60.00, 0, 0.00, 1, '', '2022-05-28', '2022-05-28 15:48:58', '2022-05-28 19:39:31'),
 (5, 7, 28, '05', 2022, '2022-05-28', '10000', '10001', 2, 0, 2, 0, 2, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, '', '2022-05-28', '2022-05-28 20:48:10', '2022-05-28 20:48:10'),
-(6, 8, 28, '05', 2022, '2022-05-28', '2227', '2229', 5, 0, 5, 1, 5, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, '', '2022-05-28', '2022-05-28 20:49:46', '2022-05-28 20:53:07');
+(6, 8, 28, '05', 2022, '2022-05-28', '2227', '2229', 5, 0, 5, 1, 5, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, '', '2022-05-28', '2022-05-28 20:49:46', '2022-05-28 20:53:07'),
+(7, 6, 9, '11', 2023, '2023-11-09', '2221', '2226', 5, 1, 5, 5, 11, NULL, 20, 300.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 3, '', '2023-11-14', '2023-11-14 20:05:29', '2023-11-14 20:05:29');
 
 -- --------------------------------------------------------
 
@@ -302,7 +305,9 @@ INSERT INTO `hora_propios` (`id`, `maquinaria_id`, `dia`, `mes`, `anio`, `fecha`
 (4, 5, 26, '05', 2022, '2022-05-26', '2221', '2226', 5, 5, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 'SSSSSSSSSSSS', '', '', '', '2022-05-26', '2022-05-27 00:03:05', '2022-05-28 21:30:27'),
 (7, 5, 28, '05', 2022, '2022-05-28', '2227', '2229', 2, 8, NULL, 1, 30.00, 1, 45.00, 0, 0.00, 0, 0.00, 1, 10.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 2, 30.00, '', '', '', '', '2022-05-28', '2022-05-28 14:33:36', '2022-05-28 21:31:24'),
 (8, 5, 29, '05', 2022, '2022-05-29', '2229', '2230', 2, 10, NULL, 1, 15.00, 0, 0.00, 3, 2.00, 1, 55.00, 1, 10.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 3, 45.00, '', '', '', '', '2022-05-28', '2022-05-28 15:44:20', '2022-05-28 21:31:32'),
-(9, 5, 27, '05', 2022, '2022-05-27', '2226', '2227', 1, 6, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, '', '', '', '', '2022-05-28', '2022-05-28 21:31:00', '2022-05-28 21:31:07');
+(9, 5, 27, '05', 2022, '2022-05-27', '2226', '2227', 1, 6, NULL, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, '', '', '', '', '2022-05-28', '2022-05-28 21:31:00', '2022-05-28 21:31:07'),
+(10, 5, 14, '11', 2023, '2023-11-14', '2221', '2226', 5, 5, NULL, 12, 500.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, '', '', '', '', '2023-11-14', '2023-11-14 19:47:17', '2023-11-14 19:47:17'),
+(11, 5, 2, '07', 2024, '2024-07-02', '2', '3', 3, 0, NULL, 1, 5.00, 1, 5.00, 1, 5.00, 1, 5.00, 1, 5.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, 0, 0.00, '', '', '', '', '2024-07-12', '2024-07-12 15:29:43', '2024-07-12 15:29:43');
 
 -- --------------------------------------------------------
 
@@ -313,6 +318,8 @@ INSERT INTO `hora_propios` (`id`, `maquinaria_id`, `dia`, `mes`, `anio`, `fecha`
 CREATE TABLE `maquinarias` (
   `id` bigint UNSIGNED NOT NULL,
   `codigo` varchar(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tipo_maquina` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nro` bigint NOT NULL,
   `clase` varchar(155) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `serie` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `chasis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -346,11 +353,13 @@ CREATE TABLE `maquinarias` (
 -- Volcado de datos para la tabla `maquinarias`
 --
 
-INSERT INTO `maquinarias` (`id`, `codigo`, `clase`, `serie`, `chasis`, `matricula`, `marca`, `modelo`, `color`, `anio`, `traccion`, `documento`, `certificado`, `dui`, `frm`, `horometro`, `kilometraje`, `estado`, `observaciones`, `combustible`, `tipo`, `propiedad`, `costo`, `encargado`, `user_id`, `foto`, `fecha_registro`, `created_at`, `updated_at`) VALUES
-(5, 'RTX-01', 'MAQUINARIA', '', '', '', '', '310-D', '', '1998', '', '', '', '', NULL, '', '', '', '', 'DIESEL', 'RETROEXCAVADORAS', 'PROPIO', 0.00, 'JOSE MARTINEZ', 2, 'default.png', '2022-05-25', '2022-05-25 15:58:18', '2022-05-25 15:58:18'),
-(6, 'PLA-01', 'EQUIPO', '', '', '', 'CATERPILLAR', '950-C', '', '1982', '', '', '', '', NULL, '', '', '', '', '', 'PALAS', 'ALQUILER', 20.00, 'CESAR CHOQUEHUANCA', 7, 'PLA-011653504107.jpg', '2022-05-25', '2022-05-25 18:41:47', '2022-05-27 00:38:01'),
-(7, 'RTX-02', 'EQUIPO', '', '', '', 'JHON DEERE', '410-D', '', '1995', '', '', '', '', '', '', '', '', '', '', 'RETROEXCAVADORAS', 'ALQUILER', 40.00, 'CESAR CHOQUEHUANCA', 9, 'default.png', '2022-05-28', '2022-05-28 20:46:49', '2022-05-28 20:46:49'),
-(8, 'PLA-02', 'EQUIPO', '', '', '', 'CATERPILLAR', '951-C', '', '1982', '', '', '', '', '', '', '', '', '', '', 'PALAS', 'ALQUILER', 40.00, 'CESAR CHOQUEHUANCA', 8, 'default.png', '2022-05-28', '2022-05-28 20:49:25', '2022-05-28 20:49:25');
+INSERT INTO `maquinarias` (`id`, `codigo`, `tipo_maquina`, `nro`, `clase`, `serie`, `chasis`, `matricula`, `marca`, `modelo`, `color`, `anio`, `traccion`, `documento`, `certificado`, `dui`, `frm`, `horometro`, `kilometraje`, `estado`, `observaciones`, `combustible`, `tipo`, `propiedad`, `costo`, `encargado`, `user_id`, `foto`, `fecha_registro`, `created_at`, `updated_at`) VALUES
+(5, 'RTX1', 'RETROEXCAVADORA', 1, 'MAQUINARIA', '', '', '', '', '310-D', '', '1998', '', '', '', '', '', '', '', '', '', 'DIESEL', 'RETROEXCAVADORAS', 'PROPIO', 0.00, 'JOSE MARTINEZ', 2, 'default.png', '2022-05-25', '2022-05-25 15:58:18', '2024-07-13 15:51:02'),
+(6, 'PLA1', 'PALA', 1, 'EQUIPO', '', '', '', 'CATERPILLAR', '950-C', '', '1982', '', '', '', '', '', '', '', '', '', '', 'PALAS', 'ALQUILER', 20.00, 'CESAR CHOQUEHUANCA', 7, 'PLA-011653504107.jpg', '2022-05-25', '2022-05-25 18:41:47', '2024-07-13 15:51:07'),
+(7, 'RTX2', 'RETROEXCAVADORA', 2, 'EQUIPO', '', '', '', 'JHON DEERE', '410-D', '', '1995', '', '', '', '', '', '', '', '', '', '', 'RETROEXCAVADORAS', 'ALQUILER', 40.00, 'CESAR CHOQUEHUANCA', 9, 'default.png', '2022-05-28', '2022-05-28 20:46:49', '2024-07-13 15:51:15'),
+(8, 'PLA2', 'PALA', 2, 'EQUIPO', '', '', '', 'CATERPILLAR', '951-C', '', '1982', '', '', '', '', '', '', '', '', '', '', 'PALAS', 'ALQUILER', 40.00, 'CESAR CHOQUEHUANCA', 8, 'default.png', '2022-05-28', '2022-05-28 20:49:25', '2024-07-13 15:51:21'),
+(9, 'TPO1', 'TOPADORA DE ORUGA', 1, 'MAQUINARIA', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'TOPADORA', 'PROPIO', 0.00, 'JUAN PERES', 12, 'default.png', '2024-07-13', '2024-07-13 15:54:14', '2024-07-13 15:54:14'),
+(10, 'RTX3', 'RETROEXCAVADORA', 3, 'MAQUINARIA', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'RETROEXCAVADORAS', 'PROPIO', 0.00, 'ELVIS CHOQUE', 13, 'default.png', '2024-07-13', '2024-07-13 15:55:03', '2024-07-13 15:55:03');
 
 -- --------------------------------------------------------
 
@@ -467,7 +476,9 @@ INSERT INTO `users` (`id`, `name`, `password`, `tipo`, `foto`, `estado`, `create
 (8, 'JORTIZ', '$2y$10$yIsPMmvDFgkAa3XFIU.xjOqnS/EMvzVp5hu7rv8O2SeeWqBQNu9QC', 'OPERADOR', 'JACINTO1653518345.jpg', 1, '2022-05-25 22:39:05', '2022-05-25 22:39:05'),
 (9, 'ECALCINA', '$2y$10$bRQN3.z871r7uOUyM9/e6OFqjxfsaMhKIVinL3BwuuG6a1opg7xhy', 'OPERADOR', 'EDUARDO1653518366.jpg', 1, '2022-05-25 22:39:26', '2022-05-27 17:18:34'),
 (10, 'SSUAREZ', '$2y$10$kQoaR29aQxPBCUmEZU4DHeaSc2zBTfHtzlD80kilxGxNTrcaxCeVy', 'CAPATAZ', 'SAUL1653518393.jpg', 1, '2022-05-25 22:39:53', '2022-05-27 17:18:08'),
-(11, 'JMARTINEZ', '$2y$10$ZXdCn/j7wgdFXGFB9ezZ2OEtrOchadJb/2Z1Nm3jwjYEcM.LB6sw6', 'ENCARGADO DE OBRA', 'JAVIER1653518486.jpg', 1, '2022-05-25 22:41:26', '2022-05-27 17:19:10');
+(11, 'JMARTINEZ', '$2y$10$ZXdCn/j7wgdFXGFB9ezZ2OEtrOchadJb/2Z1Nm3jwjYEcM.LB6sw6', 'ENCARGADO DE OBRA', 'JAVIER1653518486.jpg', 1, '2022-05-25 22:41:26', '2022-05-27 17:19:10'),
+(12, 'MCOLQUE', '$2y$10$MN58TmYXfwtBV3VM.DJ1t.hW5/.9yo3tp.QNVLFAlzY/ATSLa56PS', 'OPERADOR', 'MARTIN1720886039.jpg', 1, '2024-07-13 15:53:59', '2024-07-13 15:53:59'),
+(13, 'JMAMANI', '$2y$10$gqFrU6QuyjLyF7t8RiZjBeqTje6HOl56O96zECZ9IbyEa4lDw4fIq', 'OPERADOR', 'JOSUE1720886085.jpg', 1, '2024-07-13 15:54:45', '2024-07-13 15:54:45');
 
 --
 -- Índices para tablas volcadas
@@ -590,7 +601,7 @@ ALTER TABLE `configuracions`
 -- AUTO_INCREMENT de la tabla `datos_usuarios`
 --
 ALTER TABLE `datos_usuarios`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `entregas`
@@ -602,19 +613,19 @@ ALTER TABLE `entregas`
 -- AUTO_INCREMENT de la tabla `hora_alquilados`
 --
 ALTER TABLE `hora_alquilados`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `hora_propios`
 --
 ALTER TABLE `hora_propios`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `maquinarias`
 --
 ALTER TABLE `maquinarias`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
@@ -638,7 +649,7 @@ ALTER TABLE `proyecto_usuarios`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas

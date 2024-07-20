@@ -60,7 +60,7 @@
 
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-yellow">
+        <nav class="main-header navbar navbar-expand bg-secundario">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -120,7 +120,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar elevation-4 sidebar-blue bg-primary">
+        <aside class="main-sidebar elevation-4 sidebar-blue bg-principal">
             <!-- Brand Logo -->
             <a href="{{ route('home') }}" class="brand-link" style="color:black!important;">
                 <img src="{{ asset('imgs/' . app\Configuracion::first()->logo) }}" alt="AdminLTE Logo"

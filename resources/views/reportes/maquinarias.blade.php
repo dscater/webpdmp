@@ -14,7 +14,6 @@
             margin-bottom: 1cm;
             margin-left: 0.5cm;
             margin-right: 0.5cm;
-            border: 5px solid blue;
         }
 
         table {
@@ -45,7 +44,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 18pt;
-            color: #007bff;
+            color: #001870;
             width: 450px;
             margin: auto;
             margin-top: 15px;
@@ -57,7 +56,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             font-size: 15pt;
-            color: #007bff;
+            color: #001870;
             width: 450px;
             text-align: center;
             margin: auto;
@@ -66,7 +65,7 @@
         }
 
         .fecha {
-            color: #006adb;
+            color: #001870;
             width: 250px;
             text-align: center;
             margin: auto;
@@ -86,7 +85,7 @@
         }
 
         table thead {
-            background: #007bff;
+            background: #001870;
             color: white;
         }
 
@@ -98,7 +97,7 @@
         table tbody tr td {
             padding: 3px;
             font-size: 0.5em;
-            border-bottom: solid 1px #007bff;
+            border-bottom: solid 1px #001870;
             text-align: center;
         }
 

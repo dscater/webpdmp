@@ -43,6 +43,12 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
+                                    <label>Tipo Máquina/Equipo</label>
+                                    {{ Form::text('tipo_maquina', null, ['class' => 'form-control', 'required']) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
                                     <label>Clase</label>
                                     {{ Form::select('clase', ['' => 'Seleccione...', 'EQUIPO' => 'EQUIPO', 'MAQUINARIA' => 'MAQUINARIA'], null, ['class' => 'form-control', 'required']) }}
                                 </div>
@@ -191,7 +197,8 @@
                                 <div class="form-group">
                                     <label>Foto:</label><br>
                                     <div class="col-md-12 text-center">
-                                        <img src="{{ asset('imgs/equipos/' . $maquinaria->foto) }}" width="120px" alt="">
+                                        <img src="{{ asset('imgs/equipos/' . $maquinaria->foto) }}" width="120px"
+                                            alt="">
                                     </div>
                                 </div>
                             </div>

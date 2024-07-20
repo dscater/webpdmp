@@ -172,14 +172,13 @@
         .color_azul {
             color: #007bff;
         }
-
     </style>
 </head>
 
 <body>
     <div class="encabezado">
         <h4 class="texto">PARTES DIARIOS Y CONTROL DE HORAS TRABAJADAS</h4>
-        <h4 class="texto">PROYECTO: {{ $proyecto->nombre }}</h4>
+        <h4 class="texto">PROYECTO: {{ $proyecto ? $proyecto->nombre : '' }}</h4>
     </div>
     <table class="table_datos">
         <tbody>
@@ -196,10 +195,20 @@
             </tr>
             <tr>
                 <td class="bold color_azul">Operador:</td>
-                <td>{{ $maquinaria->user->datosUsuario->nombre }} {{ $maquinaria->user->datosUsuario->paterno }}
-                    {{ $maquinaria->user->datosUsuario->materno }}</td>
+                <td>
+                    @if ($maquinaria->user && $maquinaria->user->datosUsuario)
+                        {{ $maquinaria->user->datosUsuario->nombre }} {{ $maquinaria->user->datosUsuario->paterno }}
+                        {{ $maquinaria->user->datosUsuario->materno }}
+                    @else
+                        {{ $maquinaria->user->name }}
+                    @endif
+                </td>
                 <td class="bold color_azul">Fecha:</td>
-                <td>{{ date('d/m/Y', strtotime($proyecto->fecha_ini)) }}</td>
+                <td>
+                    @if ($proyecto)
+                        {{ date('d/m/Y', strtotime($proyecto->fecha_ini)) }}
+                    @endif
+                </td>
             </tr>
         </tbody>
     </table>
@@ -286,7 +295,7 @@
                                     $t_horas_trabajadas += $registros[$fecha]->horas_trabajadas;
                                     $t_calentamiento += $registros[$fecha]->calentamiento;
                                     $t_total_horas += $registros[$fecha]->total_horas;
-                                    
+
                                     if ($registros[$fecha]->maquinaria->combustible == 'DIESEL') {
                                         $t_diesel += $registros[$fecha]->costo_combustible;
                                     } else {

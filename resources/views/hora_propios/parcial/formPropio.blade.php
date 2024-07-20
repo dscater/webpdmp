@@ -164,7 +164,9 @@
                 <button type="button" class="btn btn-danger float-right ml-1"
                     id="btnEliminaFormulario">Eliminar</button>
             @endif
-            <a href="{{ route('hora_propios.trayecto_gps') }}" class="btn bg-black float-right">Trayecto GPS<a>
+            {{-- <a href="{{ route('hora_propios.trayecto_gps') }}" class="btn bg-black float-right">Trayecto GPS<a> --}}
+            <a href=" http://www.cantrackportal.com/user/indexp.aspx?" target="_blank"
+                class="btn bg-black float-right">Trayecto GPS<a>
                 @else
                     <button type="button" class="btn bg-yellow float-right"
                         id="btnRegistraFormulario">Registrar</button>

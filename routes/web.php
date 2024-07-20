@@ -94,4 +94,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('reportes/usuarios', 'ReporteController@usuarios')->name('reportes.usuarios');
     Route::get('reportes/maquinarias', 'ReporteController@maquinarias')->name('reportes.maquinarias');
     Route::get('reportes/costos', 'ReporteController@costos')->name('reportes.costos');
+    Route::get('reportes/proyectos', 'ReporteController@proyectos')->name('reportes.proyectos');
 });

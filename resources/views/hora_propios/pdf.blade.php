@@ -172,7 +172,6 @@
         .color_azul {
             color: #007bff;
         }
-
     </style>
 </head>
 
@@ -188,12 +187,18 @@
             </tr>
             <tr>
                 <td class="bold color_azul">Operador:</td>
-                <td>{{ $maquinaria->user->datosUsuario->nombre }} {{ $maquinaria->user->datosUsuario->paterno }}
-                    {{ $maquinaria->user->datosUsuario->materno }}</td>
+                <td>
+                    @if ($maquinaria->user && $maquinaria->user->datosUsuario)
+                        {{ $maquinaria->user->datosUsuario->nombre }} {{ $maquinaria->user->datosUsuario->paterno }}
+                        {{ $maquinaria->user->datosUsuario->materno }}
+                    @else
+                        {{ $maquinaria->user->name }}
+                    @endif
+                </td>
                 <td class="bold color_azul" width="4%">Mes:</td>
                 <td>{{ $array_meses[date('m', strtotime($anio_mes . '-01'))] }}</td>
                 <td class="bold color_azul" width="6%">Proyecto:</td>
-                <td>{{ $proyecto->nombre }}</td>
+                <td>{{ $proyecto ? $proyecto->nombre : '' }}</td>
             </tr>
             <tr>
                 <td class="bold color_azul">Encargado:</td>
@@ -201,7 +206,11 @@
                 <td></td>
                 <td></td>
                 <td class="bold color_azul">Lugar:</td>
-                <td>{{ $proyecto->lugar }}</td>
+                <td>
+                    @if ($proyecto)
+                        {{ $proyecto->lugar }}
+                    @endif
+                </td>
             </tr>
         </tbody>
     </table>
